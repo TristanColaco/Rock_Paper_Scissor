@@ -1,9 +1,24 @@
+
 print("Let's play Rock, Paper, Scissor")
 
-game = 1
-while game == 1:
-    player_choice = str.lower(input("Please enter your choice --> "))
-    computer_choice = "paper"
+test_cases = {
+    1: ("rock", "paper"),
+    2: ("rock", "scissor"),
+    3: ("rock", "rock"),
+    4: ("paper", "paper"),
+    5: ("paper", "scissor"),
+    6: ("paper", "rock"),
+    7: ("scissor", "rock"),
+    8: ("scissor", "paper"),
+    9: ("scissor", "scissor")
+}
+
+for key, (player, computer) in test_cases.items():
+    print(f"---Test Cases #{key}---")
+    print(f" Player chooses: {player} & Computer chooses: {computer}")
+
+    player_choice = player
+    computer_choice = computer
 
     #if player chooses rock
     if player_choice == "rock":
@@ -31,7 +46,5 @@ while game == 1:
             print("You lose!")
         else:
             print("Its a tie!")
-
-    game = int(input("Do you want to continue? Press 1 or else 0 to end --> "))
 
 print("Thank you for playing!!!")
